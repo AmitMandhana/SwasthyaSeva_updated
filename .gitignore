@@ -19,6 +19,7 @@ Claude.*
 .mcp.json
 test-credentials.local.md
 test credentials.txt
+admin-credentials.local.txt
 backend/scripts/*
 !backend/scripts/check-swagger-coverage.js
 !backend/scripts/contract-test.js
