@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@source "../../../packages/ui";
+@source "../app/**/*.{ts,tsx}";
+@source "../lib/**/*.{ts,tsx}";
+@import "@swasthyaseva/theme/tokens.css";
+
+html { scroll-padding-top: 5rem; }
+* { scroll-margin-top: 5rem; }

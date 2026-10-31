@@ -1,0 +1,20 @@
+[
+    {
+        "name": "SwasthyaSeva OTP",
+        "slug": "swasthyaseva_otp",
+        "subject": "Your OTP for SwasthyaSeva",
+        "file": "otp.html"
+    },
+    {
+        "name": "SwasthyaSeva Registration",
+        "slug": "swasthyaseva_registration",
+        "subject": "Your OTP for SwasthyaSeva",
+        "file": "registration.html"
+    },
+    {
+        "name": "SwasthyaSeva Receptionist",
+        "slug": "swasthyaseva_receptionist",
+        "subject": "Receptionist Access OTP for SwasthyaSeva",
+        "file": "receptionist.html"
+    }
+]

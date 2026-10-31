@@ -1,0 +1,9 @@
+{
+  "name": "@swasthyaseva/theme",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./tokens.css",
+  "exports": {
+    "./tokens.css": "./tokens.css"
+  }
+}

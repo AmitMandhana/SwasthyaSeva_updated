@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SwasthyaSeva Flow Viewer</title>
+
+  <!-- React + ReactDOM -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+  <!-- JSX runtime shim (xyflow UMD expects window.jsxRuntime) -->
+  <script>
+    window.jsxRuntime = {
+      jsx: function(type, props, key) {
+        if (key !== undefined) props = Object.assign({}, props, { key: key });
+        var children = props.children;
+        delete props.children;
+        if (children === undefined) return React.createElement(type, props);
+        if (Array.isArray(children)) return React.createElement.apply(null, [type, props].concat(children));
+        return React.createElement(type, props, children);
+      },
+      jsxs: function(type, props, key) {
+        if (key !== undefined) props = Object.assign({}, props, { key: key });
+        var children = props.children;
+        delete props.children;
+        if (children === undefined) return React.createElement(type, props);
+        if (Array.isArray(children)) return React.createElement.apply(null, [type, props].concat(children));
+        return React.createElement(type, props, children);
+      },
+      Fragment: React.Fragment,
+    };
+  </script>
+
+  <!-- React Flow -->
+  <script src="https://unpkg.com/@xyflow/react@12/dist/umd/index.js"></script>
+  <link href="https://unpkg.com/@xyflow/react@12/dist/style.css" rel="stylesheet" />
+
+  <!-- Dagre for auto-layout -->
+  <script src="https://unpkg.com/dagre@0.8.5/dist/dagre.min.js"></script>
+
+  <!-- Babel for JSX in browser -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" data-type="module" src="renderer.js"></script>
+</body>
+</html>

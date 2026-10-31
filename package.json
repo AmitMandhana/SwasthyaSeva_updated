@@ -1,0 +1,30 @@
+{
+  "name": "swasthyaseva",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "npm@10.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "test": "turbo test",
+    "test:generate": "npx test-gen generate",
+    "test:e2e": "npm run test:generate && npx playwright test",
+    "test:e2e:local": "npm run test:generate && npx playwright test --project=local-web --project=local-admin --project=local-doctor --project=local-clinic",
+    "test:e2e:prod": "npm run test:generate && npx playwright test --project=prod-web --project=prod-admin --project=prod-doctor --project=prod-clinic",
+    "test:e2e:ui": "npm run test:generate && npx playwright test --ui",
+    "test:e2e:report": "npx playwright show-report",
+    "lint:specs": "npx test-gen validate",
+    "lint:testing": "npm run lint:specs",
+    "test:analyze": "npx test-gen analyze"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "dotenv": "^17.4.2",
+    "turbo": "^2.3.3"
+  }
+}

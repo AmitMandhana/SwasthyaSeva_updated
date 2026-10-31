@@ -1,0 +1,30 @@
+-- DBNuke.sql
+-- Drops ALL objects created by DBSetup.sql
+-- Tables are dropped in reverse dependency order; CASCADE handles remaining FK refs.
+
+DROP TABLE IF EXISTS complaints CASCADE;
+DROP TABLE IF EXISTS symptoms CASCADE;
+DROP TABLE IF EXISTS patient_inquiries CASCADE;
+DROP TABLE IF EXISTS clinic_audit_logs CASCADE;
+DROP TABLE IF EXISTS prescriptions CASCADE;
+DROP TABLE IF EXISTS test_reports CASCADE;
+DROP TABLE IF EXISTS test_requests CASCADE;
+DROP TABLE IF EXISTS examination_records CASCADE;
+DROP TABLE IF EXISTS medications CASCADE;
+DROP TABLE IF EXISTS forbidden_comboes CASCADE;
+DROP TABLE IF EXISTS medicines CASCADE;
+DROP TABLE IF EXISTS payments CASCADE;
+DROP TABLE IF EXISTS notes CASCADE;
+DROP TABLE IF EXISTS appointments CASCADE;
+DROP TABLE IF EXISTS slots CASCADE;
+DROP TABLE IF EXISTS active_tokens CASCADE;
+DROP TABLE IF EXISTS audit_logs CASCADE;
+DROP TABLE IF EXISTS clinic_admins CASCADE;
+DROP TABLE IF EXISTS clinics CASCADE;
+DROP TABLE IF EXISTS doctor_extra_qualifications CASCADE;
+DROP TABLE IF EXISTS doctors CASCADE;
+DROP TABLE IF EXISTS tags CASCADE;
+DROP TABLE IF EXISTS extra_qualifications CASCADE;
+DROP TABLE IF EXISTS specializations CASCADE;
+DROP TABLE IF EXISTS admins CASCADE;
+DROP TABLE IF EXISTS users CASCADE;

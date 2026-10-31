@@ -1,0 +1,179 @@
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-alt: var(--card-alt);
+  --color-popover: var(--popover);
+  --color-popover-alt: var(--popover-alt);
+  --color-primary: var(--primary);
+  --color-primary-alt: var(--primary-alt);
+  --color-secondary: var(--secondary);
+  --color-secondary-alt: var(--secondary-alt);
+  --color-muted: var(--muted);
+  --color-muted-alt: var(--muted-alt);
+  --color-accent: var(--accent);
+  --color-accent-alt: var(--accent-alt);
+  --color-success: var(--success);
+  --color-success-alt: var(--success-alt);
+  --color-warning: var(--warning);
+  --color-warning-alt: var(--warning-alt);
+  --color-destructive: var(--destructive);
+  --color-destructive-alt: var(--destructive-alt);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-info: var(--info);
+  --color-info-alt: var(--info-alt);
+  --color-ring: var(--ring);
+  --font-heading: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+:root {
+  --background: #fafafa;
+  --foreground: #171717;
+  --card: #ffffff;
+  --card-alt: #171717;
+  --popover: #ffffff;
+  --popover-alt: #171717;
+  --primary: #0080ff;
+  --primary-alt: #ffffff;
+  --secondary: #f5f5f5;
+  --secondary-alt: #171717;
+  --muted: #f5f5f5;
+  --muted-alt: #737373;
+  --accent: #0d9488;
+  --accent-alt: #ffffff;
+  --success: #16a34a;
+  --success-alt: #ffffff;
+  --warning: #f59e0b;
+  --warning-alt: #ffffff;
+  --destructive: #ef4444;
+  --destructive-alt: #ffffff;
+  --border: #e5e5e5;
+  --input: #e5e5e5;
+  --info: #3b82f6;
+  --info-alt: #ffffff;
+  --ring: #0080ff;
+}
+
+[data-theme="dark"] {
+  --background: #0c0f1a;
+  --foreground: #f1f5f9;
+  --card: #141829;
+  --card-alt: #f1f5f9;
+  --popover: #141829;
+  --popover-alt: #f1f5f9;
+  --primary: #0080ff;
+  --primary-alt: #ffffff;
+  --secondary: #1c2137;
+  --secondary-alt: #f1f5f9;
+  --muted: #1c2137;
+  --muted-alt: #8b95ad;
+  --accent: #14b8a6;
+  --accent-alt: #ffffff;
+  --success: #22c55e;
+  --success-alt: #ffffff;
+  --warning: #f59e0b;
+  --warning-alt: #ffffff;
+  --destructive: #ef4444;
+  --destructive-alt: #ffffff;
+  --border: #252d45;
+  --input: #252d45;
+  --info: #60a5fa;
+  --info-alt: #ffffff;
+  --ring: #0080ff;
+}
+
+/* Global transitions for smooth theme switching */
+*, *::before, *::after {
+  transition-property: color, background-color, border-color, box-shadow;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* ─── Custom Scrollbar ─── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: oklch(0.55 0.1 250 / 0.4); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: oklch(0.55 0.1 250 / 0.6); }
+::-webkit-scrollbar-corner { background: transparent; }
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb { background: oklch(0.5 0.12 250 / 0.35); }
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover { background: oklch(0.5 0.12 250 / 0.55); }
+
+/* Firefox */
+* { scrollbar-width: thin; scrollbar-color: oklch(0.55 0.1 250 / 0.4) transparent; }
+[data-theme="dark"] * { scrollbar-color: oklch(0.5 0.12 250 / 0.35) transparent; }
+
+/* ─── Scroll Animations ─── */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-on-scroll { opacity: 0; }
+.animate-on-scroll.is-visible { animation: fade-in-up 0.6s ease-out forwards; }
+.animate-delay-1 { animation-delay: 100ms; }
+.animate-delay-2 { animation-delay: 200ms; }
+.animate-delay-3 { animation-delay: 300ms; }
+.animate-delay-4 { animation-delay: 400ms; }
+
+/* ─── Dot Grid Background ─── */
+.bg-dot-grid {
+  background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ─── Heartbeat Pulse ─── */
+@keyframes pulse-line {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+.animate-pulse-line { animation: pulse-line 3s ease-in-out infinite; }
+
+/* ─── Mouse Glow Effect ─── */
+.mouse-glow {
+  position: relative;
+  overflow: hidden;
+}
+.mouse-glow::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, oklch(0.65 0.15 250 / 0.07), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  left: var(--mouse-x, -200px);
+  top: var(--mouse-y, -200px);
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s;
+  opacity: 0;
+  z-index: 0;
+}
+.mouse-glow:hover::before { opacity: 1; }
+.mouse-glow > * { position: relative; z-index: 1; }
+
+/* ─── Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .animate-on-scroll { opacity: 1; }
+}

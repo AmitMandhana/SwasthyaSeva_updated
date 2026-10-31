@@ -1,0 +1,25 @@
+extends:
+  - spectral:oas
+
+rules:
+  # Enforce descriptions on all operations
+  operation-description: warn
+
+  # Enforce operation IDs
+  operation-operationId: warn
+
+  # Enforce tags on all operations
+  operation-tags: error
+
+  # Ensure info section has contact
+  info-contact: off
+
+  # Ensure info section has license
+  info-license: off
+
+  # Relax some rules for our use case
+  oas2-valid-schema-example: warn
+  oas2-schema: error
+
+  # Ensure all responses have descriptions
+  operation-success-response: error

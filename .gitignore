@@ -1,0 +1,61 @@
+*.zip
+.windsurf/
+*.env
+.env.test
+/backups
+start.log
+Knowledge transfer.md
+node_modules/
+.next/
+.turbo/
+.vercel/
+admin/.next/
+/.claude
+.agents/
+.impeccable.md
+Claude.*
+.mcp.json
+test-credentials.local.md
+test credentials.txt
+backend/scripts/*
+!backend/scripts/check-swagger-coverage.js
+!backend/scripts/contract-test.js
+!backend/scripts/schemathesis.sh
+!backend/scripts/initFreshDb.js
+.snapshot_temp.*
+output/
+flows/plans/
+prompts/
+
+# Screenshots (captured by E2E, large binaries)
+docs/screenshots/
+
+# Prescription PDF golden captures
+docs/prescription-pdfs/
+
+# Reference images and 3D models (large binaries)
+docs/reference/*.png
+docs/reference/*.jpg
+docs/reference/*.glb
+docs/reference/*.blend
+
+# E2E Testing
+e2e/generated/
+test-results/
+playwright-report/
+.auth/
+packages/test-gen/dist/
+packages/test-gen/tsconfig.tsbuildinfo
+
+# Server logs (written by start.bat)
+backend/server.log
+apps/*/frontend.log
+flows/server.log
+*.stackdump
+testing_screenshots/
+docs/reference/*.blend
+docs/reference/*.blend1
+docs/reference/*.glb
+docs/reference/*.png
+docs/reference/*.md
+audit/

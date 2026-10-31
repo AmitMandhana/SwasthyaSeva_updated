@@ -1,0 +1,8 @@
+module.exports = {
+  ALGORITHM: 'aes-256-gcm',
+  IV_LENGTH: 16,
+  SALT_LENGTH: 64,
+  TAG_LENGTH: 16,
+  KEY_LENGTH: 32,
+  PBKDF2_ITERATIONS: 100000
+};

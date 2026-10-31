@@ -1,0 +1,23 @@
+export const medicines = [
+  "Paracetamol 500mg tablet",
+  "Ibuprofen 400mg tablet",
+  "Diclofenac 50mg tablet",
+  "Amoxicillin 500mg capsule",
+  "Azithromycin 500mg tablet",
+  "Cefixime 200mg tablet",
+  "Pantoprazole 40mg tablet",
+  "Omeprazole 20mg capsule",
+  "Metformin 500mg tablet",
+  "Insulin regular 40IU/ml injection",
+  "Amlodipine 5mg tablet",
+  "Losartan 50mg tablet",
+  "Atorvastatin 20mg tablet",
+  "Levothyroxine 50mcg tablet",
+  "Estradiol valerate 2mg tablet",
+  "Progesterone 200mg capsule",
+  "Salbutamol 100mcg inhaler",
+  "Cetirizine 10mg tablet",
+  "Ondansetron 4mg tablet",
+  "Vitamin D3 60000IU capsule",
+  "Ferrous sulfate 325mg tablet"
+];

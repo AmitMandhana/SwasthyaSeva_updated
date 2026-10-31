@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@source "../../../packages/ui";
+@import "@swasthyaseva/theme/tokens.css";
+
+html { scroll-padding-top: 5rem; }
+* { scroll-margin-top: 5rem; }
+.scrollbar-none::-webkit-scrollbar { display: none; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+}
+
+.shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255,255,255,0.06) 45%,
+    rgba(255,255,255,0.1) 50%,
+    rgba(255,255,255,0.06) 55%,
+    transparent 70%
+  );
+  animation: shimmer 1.8s ease-in-out infinite;
+}
