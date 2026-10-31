@@ -1,7 +1,7 @@
 const sendMessage = require('./sendMessage');
 const sendSMSMSG91 = require('./sendSMSMSG91');
 const { isDebugNumber } = require('../debugNumbers');
-const { DEV_MODE } = require('../../config/env');
+const { DEV_MODE, OTP_BYPASS } = require('../../config/env');
 
 async function sendSMSOTP(otp, recipient, name, center = null, receptionist = null, password = null) {
 	if (!/^\+91\d{10}$/.test(recipient)) {
@@ -19,7 +19,7 @@ async function sendSMSOTP(otp, recipient, name, center = null, receptionist = nu
 		detail = `Receptionist ${receptionist} at ${center} is requesting access on your behalf. Share this OTP only if you trust them with your account.`;
 	}
 
-	if (DEV_MODE || isDebugNumber(recipient)) {
+	if (DEV_MODE || OTP_BYPASS || isDebugNumber(recipient)) {
 		console.log(`[DEV_OTP] recipient=${recipient} otp=${otp}${password ? ` password=${password}` : ''} (SMS skipped)`);
 		return true;
 	}

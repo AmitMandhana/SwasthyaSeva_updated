@@ -1,5 +1,6 @@
 const sendEmailMailgun = require('./sendEmailMailgun');
 const sendEmailMSG91 = require('./sendEmailMSG91');
+const { OTP_BYPASS } = require('../../config/env');
 
 // Responsive HTML email template (kept for Mailgun fallback)
 function wrapInTemplate(content) {
@@ -67,6 +68,10 @@ function wrapInTemplate(content) {
 }
 
 async function sendEmail(to, toName, templateId, variables) {
+    if (OTP_BYPASS) {
+        console.log(`[OTP_BYPASS] email skipped to=${to} template=${templateId}`, variables);
+        return true;
+    }
     if (process.env.MSG91_AUTH_KEY) {
         return sendEmailMSG91(to, toName, templateId, variables);
     }
