@@ -34,7 +34,8 @@ async function main() {
     for (const tpl of TEMPLATES) {
         const result = await createTemplate(authKey, tpl);
         if (result.status === 200 || result.status === 201) {
-            console.log(`  [OK] ${tpl.slug}`);
+            const id = result.data?.data?.template_id || result.data?.template_id || result.data?._id || result.data?.id;
+            console.log(`  [OK] ${tpl.slug}${id ? ` — template_id: ${id}` : ''}`);
         } else {
             console.log(`  [FAIL] ${tpl.slug} — ${result.status}:`, result.data);
         }

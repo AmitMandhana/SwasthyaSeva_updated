@@ -1,7 +1,9 @@
 *.zip
 .windsurf/
 *.env
-.env.test
+.env*
+!.env.example
+!.env.*.example
 /backups
 start.log
 Knowledge transfer.md
