@@ -1,4 +1,3 @@
-const sendEmailMailgun = require('./sendEmailMailgun');
 const sendEmailMSG91 = require('./sendEmailMSG91');
 const { OTP_BYPASS } = require('../../config/env');
 
